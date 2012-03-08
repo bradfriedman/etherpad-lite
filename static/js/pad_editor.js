@@ -87,8 +87,6 @@ var padeditor = (function()
         return defaultValue;
       }
 
-      self.ace.setProperty("showsauthorcolors", !settings.noColors);
-
       self.ace.setProperty("rtlIsTrue", settings.rtlIsTrue);
 
       var v;
@@ -97,7 +95,7 @@ var padeditor = (function()
       self.ace.setProperty("showslinenumbers", v);
       padutils.setCheckbox($("#options-linenoscheck"), v);
 
-      v = getOption('showAuthorColors', true);
+      v = !settings.noColors;
       self.ace.setProperty("showsauthorcolors", v);
       padutils.setCheckbox($("#options-colorscheck"), v);
 
